@@ -2,8 +2,9 @@
 
 namespace TypiCMS\Modules\Galleries\Http\Controllers;
 
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request;
 use TypiCMS\Modules\Core\Http\Controllers\BaseApiController;
+use TypiCMS\Modules\Galleries\Models\Gallery;
 use TypiCMS\Modules\Galleries\Repositories\GalleryInterface as Repository;
 
 class ApiController extends BaseApiController
@@ -32,7 +33,7 @@ class ApiController extends BaseApiController
      */
     public function store()
     {
-        $model = $this->repository->create(Input::all());
+        $model = $this->repository->create(Request::all());
         $error = $model ? false : true;
 
         return response()->json([
@@ -48,12 +49,28 @@ class ApiController extends BaseApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function update($model)
+    public function update()
     {
-        $error = $this->repository->update(Input::all()) ? false : true;
+        $updated = $this->repository->update(Request::all());
 
         return response()->json([
-            'error' => $error,
-        ], 200);
+            'error' => !$updated,
+        ]);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param \TypiCMS\Modules\Galleries\Models\Gallery $gallery
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function destroy(Gallery $gallery)
+    {
+        $deleted = $this->repository->delete($gallery);
+
+        return response()->json([
+            'error' => !$deleted,
+        ]);
     }
 }

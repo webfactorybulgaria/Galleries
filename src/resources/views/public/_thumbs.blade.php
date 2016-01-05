@@ -1,18 +1,18 @@
 @if ($model->files->count())
-    <div class="row">
+    <ul class="gallery-files files-list">
     @foreach ($model->files as $file)
-        <div class="col-xs-6 col-sm-4 col-md-3">
+        <li class="files-list-item">
             @if ($file->type == 'i')
-            <a class="fancybox" href="{{ asset($file->path . '/' . $file->file) }}" data-fancybox-group="{{ $model->name }}">
-                <img class="img-responsive" src="{!! $file->present()->thumbSrc(370, 370, array(), 'file') !!}" alt="{{ $file->alt_attribute }}">
+            <a class="files-list-image fancybox" href="{!! $file->present()->thumbSrc(1200, 1200, array('resize'), 'file') !!}" data-fancybox-group="{{ $model->slug }}">
+                <img class="files-list-image-thumb" src="{!! $file->present()->thumbSrc(370, 370, array(), 'file') !!}" alt="{{ $file->alt_attribute }}">
             </a>
             @else
-            <a class="file" href="{{ asset($file->path . '/' . $file->file) }}" target="_blank">
-                <span class="icon fa fa-file-o fa-2x"></span>
-                <span class="filename">{{ $file->file }}</span>
+            <a class="files-list-document" href="{{ asset($file->path . '/' . $file->file) }}" target="_blank">
+                <span class="files-list-document-icon fa fa-file-o fa-3x"></span>
+                <span class="files-list-document-filename">{{ $file->file }}</span> <small class="files-list-document-filesize">({{ $file->present()->filesize }})</small>
             </a>
             @endif
-        </div>
+        </li>
     @endforeach
-    </div>
+    </ul>
 @endif
