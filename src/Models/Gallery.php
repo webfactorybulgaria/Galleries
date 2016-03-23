@@ -39,8 +39,6 @@ class Gallery extends Base
         'body',
     ];
 
-    protected $appends = ['status', 'title', 'files_count', 'thumb'];
-
     /**
      * Columns that are file.
      *
@@ -49,6 +47,8 @@ class Gallery extends Base
     public $attachments = [
         'image',
     ];
+
+    protected $appends = ['status', 'title', 'files_count', 'thumb'];
 
     /**
      * One gallery has many files.
