@@ -13,7 +13,7 @@ class SidebarViewComposer extends BaseSidebarViewComposer
     {
         $view->sidebar->group(trans('global.menus.media'), function (SidebarGroup $group) {
             $group->id = 'media';
-            $group->weight = 40;
+            $group->weight = 2;
             $group->addItem(trans('galleries::global.name'), function (SidebarItem $item) {
                 $item->icon = config('typicms.galleries.sidebar.icon', 'icon fa fa-fw fa-photo');
                 $item->weight = config('typicms.galleries.sidebar.weight');
