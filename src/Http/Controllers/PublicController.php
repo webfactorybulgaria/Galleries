@@ -12,7 +12,7 @@ class PublicController extends BasePublicController
 {
     public function __construct(GalleryInterface $gallery)
     {
-        parent::__construct($gallery);
+        parent::__construct($gallery, 'galleries');
     }
 
     /**
