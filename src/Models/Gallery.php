@@ -2,7 +2,7 @@
 
 namespace TypiCMS\Modules\Galleries\Models;
 
-use Dimsav\Translatable\Translatable;
+use TypiCMS\Modules\Core\Traits\Translatable;
 use Laracasts\Presenter\PresentableTrait;
 use TypiCMS\Modules\Core\Models\Base;
 use TypiCMS\Modules\History\Traits\Historable;
@@ -39,7 +39,7 @@ class Gallery extends Base
         'body',
     ];
 
-    protected $appends = ['status', 'title', 'files_count', 'thumb'];
+    protected $appends = ['files_count', 'thumb'];
 
     /**
      * One gallery has many files.

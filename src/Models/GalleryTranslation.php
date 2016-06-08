@@ -11,6 +11,6 @@ class GalleryTranslation extends BaseTranslation
      */
     public function owner()
     {
-        return $this->belongsTo('TypiCMS\Modules\Galleries\Models\Gallery', 'gallery_id');
+        return $this->belongsTo('TypiCMS\Modules\Galleries\Models\Gallery', 'gallery_id')->withoutGlobalScopes();
     }
 }

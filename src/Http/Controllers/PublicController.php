@@ -24,7 +24,7 @@ class PublicController extends BasePublicController
     {
         $page = Request::input('page');
         $perPage = config('typicms.galleries.per_page');
-        $data = $this->repository->byPage($page, $perPage, ['translations']);
+        $data = $this->repository->byPage($page, $perPage, []);
         $models = new Paginator($data->items, $data->totalItems, $perPage, null, ['path' => Paginator::resolveCurrentPath()]);
 
         return view('galleries::public.index')
@@ -38,7 +38,7 @@ class PublicController extends BasePublicController
      */
     public function show($slug)
     {
-        $model = $this->repository->bySlug($slug, ['translations', 'files', 'files.translations']);
+        $model = $this->repository->bySlug($slug, ['files']);
 
         return view('galleries::public.show')
             ->with(compact('model'));
