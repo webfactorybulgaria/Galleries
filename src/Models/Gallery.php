@@ -72,9 +72,19 @@ class Gallery extends Base
     }
 
     /**
-     * Get files count.
+     * Append thumb attribute.
      *
-     * @return string title
+     * @return string
+     */
+    public function getThumbAttribute()
+    {
+        return $this->present()->thumbSrc(null, 22);
+    }
+
+    /**
+     * Append files_count attribute.
+     *
+     * @return string
      */
     public function getFilesCountAttribute()
     {
