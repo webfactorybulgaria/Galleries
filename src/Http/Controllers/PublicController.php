@@ -5,8 +5,8 @@ namespace TypiCMS\Modules\Galleries\Http\Controllers;
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
 use Illuminate\Support\Facades\Request;
 use TypiCMS;
-use TypiCMS\Modules\Core\Http\Controllers\BasePublicController;
-use TypiCMS\Modules\Galleries\Repositories\GalleryInterface;
+use TypiCMS\Modules\Core\Custom\Http\Controllers\BasePublicController;
+use TypiCMS\Modules\Galleries\Custom\Repositories\GalleryInterface;
 
 class PublicController extends BasePublicController
 {

@@ -3,9 +3,9 @@
 namespace TypiCMS\Modules\Galleries\Http\Controllers;
 
 use Illuminate\Support\Facades\Request;
-use TypiCMS\Modules\Core\Http\Controllers\BaseApiController;
-use TypiCMS\Modules\Galleries\Models\Gallery;
-use TypiCMS\Modules\Galleries\Repositories\GalleryInterface as Repository;
+use TypiCMS\Modules\Core\Custom\Http\Controllers\BaseApiController;
+use TypiCMS\Modules\Galleries\Custom\Models\Gallery;
+use TypiCMS\Modules\Galleries\Custom\Repositories\GalleryInterface as Repository;
 
 class ApiController extends BaseApiController
 {
@@ -61,7 +61,7 @@ class ApiController extends BaseApiController
     /**
      * Remove the specified resource from storage.
      *
-     * @param \TypiCMS\Modules\Galleries\Models\Gallery $gallery
+     * @param \TypiCMS\Modules\Galleries\Custom\Models\Gallery $gallery
      *
      * @return \Illuminate\Http\JsonResponse
      */

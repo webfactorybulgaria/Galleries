@@ -2,7 +2,7 @@
 
 namespace TypiCMS\Modules\Galleries\Presenters;
 
-use TypiCMS\Modules\Core\Presenters\Presenter;
+use TypiCMS\Modules\Core\Custom\Presenters\Presenter;
 
 class ModulePresenter extends Presenter
 {

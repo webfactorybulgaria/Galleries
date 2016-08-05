@@ -2,10 +2,10 @@
 
 namespace TypiCMS\Modules\Galleries\Http\Controllers;
 
-use TypiCMS\Modules\Core\Http\Controllers\BaseAdminController;
-use TypiCMS\Modules\Galleries\Http\Requests\FormRequest;
-use TypiCMS\Modules\Galleries\Models\Gallery;
-use TypiCMS\Modules\Galleries\Repositories\GalleryInterface;
+use TypiCMS\Modules\Core\Custom\Http\Controllers\BaseAdminController;
+use TypiCMS\Modules\Galleries\Custom\Http\Requests\FormRequest;
+use TypiCMS\Modules\Galleries\Custom\Models\Gallery;
+use TypiCMS\Modules\Galleries\Custom\Repositories\GalleryInterface;
 
 class AdminController extends BaseAdminController
 {
@@ -43,7 +43,7 @@ class AdminController extends BaseAdminController
     /**
      * Edit form for the specified resource.
      *
-     * @param \TypiCMS\Modules\Galleries\Models\Gallery $gallery
+     * @param \TypiCMS\Modules\Galleries\Custom\Models\Gallery $gallery
      *
      * @return \Illuminate\View\View
      */
@@ -56,7 +56,7 @@ class AdminController extends BaseAdminController
     /**
      * Store a newly created resource in storage.
      *
-     * @param \TypiCMS\Modules\Galleries\Http\Requests\FormRequest $request
+     * @param \TypiCMS\Modules\Galleries\Custom\Http\Requests\FormRequest $request
      *
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -70,8 +70,8 @@ class AdminController extends BaseAdminController
     /**
      * Update the specified resource in storage.
      *
-     * @param \TypiCMS\Modules\Galleries\Models\Gallery            $gallery
-     * @param \TypiCMS\Modules\Galleries\Http\Requests\FormRequest $request
+     * @param \TypiCMS\Modules\Galleries\Custom\Models\Gallery            $gallery
+     * @param \TypiCMS\Modules\Galleries\Custom\Http\Requests\FormRequest $request
      *
      * @return \Illuminate\Http\RedirectResponse
      */
