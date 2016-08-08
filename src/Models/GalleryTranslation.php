@@ -2,7 +2,7 @@
 
 namespace TypiCMS\Modules\Galleries\Models;
 
-use TypiCMS\Modules\Core\Custom\Models\BaseTranslation;
+use TypiCMS\Modules\Core\Shells\Models\BaseTranslation;
 
 class GalleryTranslation extends BaseTranslation
 {
@@ -11,6 +11,6 @@ class GalleryTranslation extends BaseTranslation
      */
     public function owner()
     {
-        return $this->belongsTo('TypiCMS\Modules\Galleries\Custom\Models\Gallery', 'gallery_id')->withoutGlobalScopes();
+        return $this->belongsTo('TypiCMS\Modules\Galleries\Shells\Models\Gallery', 'gallery_id')->withoutGlobalScopes();
     }
 }

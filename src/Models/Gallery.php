@@ -2,10 +2,10 @@
 
 namespace TypiCMS\Modules\Galleries\Models;
 
-use TypiCMS\Modules\Core\Custom\Traits\Translatable;
+use TypiCMS\Modules\Core\Shells\Traits\Translatable;
 use Laracasts\Presenter\PresentableTrait;
-use TypiCMS\Modules\Core\Custom\Models\Base;
-use TypiCMS\Modules\History\Custom\Traits\Historable;
+use TypiCMS\Modules\Core\Shells\Models\Base;
+use TypiCMS\Modules\History\Shells\Traits\Historable;
 
 class Gallery extends Base
 {
@@ -13,7 +13,7 @@ class Gallery extends Base
     use Translatable;
     use PresentableTrait;
 
-    protected $presenter = 'TypiCMS\Modules\Galleries\Custom\Presenters\ModulePresenter';
+    protected $presenter = 'TypiCMS\Modules\Galleries\Shells\Presenters\ModulePresenter';
 
     protected $fillable = [
         'name',
@@ -48,7 +48,7 @@ class Gallery extends Base
      */
     public function files()
     {
-        return $this->hasMany('TypiCMS\Modules\Files\Custom\Models\File')->order();
+        return $this->hasMany('TypiCMS\Modules\Files\Shells\Models\File')->order();
     }
 
     /**
@@ -58,7 +58,7 @@ class Gallery extends Base
      */
     public function news()
     {
-        return $this->morphedByMany('TypiCMS\Modules\News\Custom\Models\News');
+        return $this->morphedByMany('TypiCMS\Modules\News\Shells\Models\News');
     }
 
     /**
@@ -68,7 +68,7 @@ class Gallery extends Base
      */
     public function pages()
     {
-        return $this->morphedByMany('TypiCMS\Modules\Pages\Custom\Models\Page');
+        return $this->morphedByMany('TypiCMS\Modules\Pages\Shells\Models\Page');
     }
 
     /**

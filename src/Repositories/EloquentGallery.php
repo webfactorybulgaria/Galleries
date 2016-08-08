@@ -3,8 +3,8 @@
 namespace TypiCMS\Modules\Galleries\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
-use TypiCMS\Modules\Core\Custom\Repositories\RepositoriesAbstract;
-use TypiCMS\Modules\Files\Custom\Models\File;
+use TypiCMS\Modules\Core\Shells\Repositories\RepositoriesAbstract;
+use TypiCMS\Modules\Files\Shells\Models\File;
 
 class EloquentGallery extends RepositoriesAbstract implements GalleryInterface
 {

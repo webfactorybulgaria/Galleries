@@ -1,6 +1,6 @@
 <?php
 
-namespace TypiCMS\Modules\Galleries\Custom\Http\Controllers;
+namespace TypiCMS\Modules\Galleries\Shells\Http\Controllers;
 
 use TypiCMS\Modules\Galleries\Http\Controllers\PublicController as Base;
 

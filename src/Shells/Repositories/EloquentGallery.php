@@ -1,6 +1,6 @@
 <?php
 
-namespace TypiCMS\Modules\Galleries\Custom\Repositories;
+namespace TypiCMS\Modules\Galleries\Shells\Repositories;
 
 use TypiCMS\Modules\Galleries\Repositories\EloquentGallery as Base;
 

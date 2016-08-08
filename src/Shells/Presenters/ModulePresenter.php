@@ -1,6 +1,6 @@
 <?php
 
-namespace TypiCMS\Modules\Galleries\Custom\Presenters;
+namespace TypiCMS\Modules\Galleries\Shells\Presenters;
 
 use TypiCMS\Modules\Galleries\Presenters\ModulePresenter as Base;
 

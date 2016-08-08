@@ -1,6 +1,6 @@
 <?php
 
-namespace TypiCMS\Modules\Galleries\Custom\Providers;
+namespace TypiCMS\Modules\Galleries\Shells\Providers;
 
 use TypiCMS\Modules\Galleries\Providers\RouteServiceProvider as Base;
 

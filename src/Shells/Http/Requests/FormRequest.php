@@ -1,6 +1,6 @@
 <?php
 
-namespace TypiCMS\Modules\Galleries\Custom\Http\Requests;
+namespace TypiCMS\Modules\Galleries\Shells\Http\Requests;
 
 use TypiCMS\Modules\Galleries\Http\Requests\FormRequest as Base;
 
