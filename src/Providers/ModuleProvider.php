@@ -5,14 +5,14 @@ namespace TypiCMS\Modules\Galleries\Providers;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use TypiCMS\Modules\Core\Facades\TypiCMS;
-use TypiCMS\Modules\Core\Observers\FileObserver;
-use TypiCMS\Modules\Core\Observers\SlugObserver;
-use TypiCMS\Modules\Core\Services\Cache\LaravelCache;
-use TypiCMS\Modules\Galleries\Models\Gallery;
-use TypiCMS\Modules\Galleries\Models\GalleryTranslation;
-use TypiCMS\Modules\Galleries\Repositories\CacheDecorator;
-use TypiCMS\Modules\Galleries\Repositories\EloquentGallery;
+use TypiCMS\Modules\Core\Shells\Facades\TypiCMS;
+use TypiCMS\Modules\Core\Shells\Observers\FileObserver;
+use TypiCMS\Modules\Core\Shells\Observers\SlugObserver;
+use TypiCMS\Modules\Core\Shells\Services\Cache\LaravelCache;
+use TypiCMS\Modules\Galleries\Shells\Models\Gallery;
+use TypiCMS\Modules\Galleries\Shells\Models\GalleryTranslation;
+use TypiCMS\Modules\Galleries\Shells\Repositories\CacheDecorator;
+use TypiCMS\Modules\Galleries\Shells\Repositories\EloquentGallery;
 
 class ModuleProvider extends ServiceProvider
 {
@@ -37,7 +37,7 @@ class ModuleProvider extends ServiceProvider
 
         AliasLoader::getInstance()->alias(
             'Galleries',
-            'TypiCMS\Modules\Galleries\Facades\Facade'
+            'TypiCMS\Modules\Galleries\Shells\Facades\Facade'
         );
 
         // Observers
@@ -52,12 +52,12 @@ class ModuleProvider extends ServiceProvider
         /*
          * Register route service provider
          */
-        $app->register('TypiCMS\Modules\Galleries\Providers\RouteServiceProvider');
+        $app->register('TypiCMS\Modules\Galleries\Shells\Providers\RouteServiceProvider');
 
         /*
          * Sidebar view composer
          */
-        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Galleries\Composers\SidebarViewComposer');
+        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Galleries\Shells\Composers\SidebarViewComposer');
 
         /*
          * Add the page in the view.
@@ -66,7 +66,7 @@ class ModuleProvider extends ServiceProvider
             $view->page = TypiCMS::getPageLinkedToModule('galleries');
         });
 
-        $app->bind('TypiCMS\Modules\Galleries\Repositories\GalleryInterface', function (Application $app) {
+        $app->bind('TypiCMS\Modules\Galleries\Shells\Repositories\GalleryInterface', function (Application $app) {
             $repository = new EloquentGallery(new Gallery());
             if (!config('typicms.cache')) {
                 return $repository;
