@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Galleries\Shells\Repositories;
 
-use TypiCMS\Modules\Galleries\Repositories\GalleryInterface as Base;
+use TypiCMS\Modules\Galleries\Repositories\GalleryInterface as BaseInterface;
 
-interface GalleryInterface extends Base
+interface GalleryInterface extends BaseInterface
 {
 
 }
