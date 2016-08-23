@@ -49,6 +49,8 @@ class AdminController extends BaseAdminController
      */
     public function edit(Gallery $gallery)
     {
+        app('JavaScript')->put('models', $gallery->files);
+
         return view('galleries::admin.edit')
             ->with(['model' => $gallery]);
     }

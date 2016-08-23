@@ -21,17 +21,19 @@ class EloquentGallery extends RepositoriesAbstract implements GalleryInterface
      */
     public function allRaw()
     {
-        $query = $this->make(['translations'])
+        $query = $this->make()
             ->select(
-                'id',
+                'galleries.id',
                 'name',
                 'image',
-                DB::raw('(SELECT COUNT(*) FROM `'.
-                    DB::getTablePrefix().
-                    'files` WHERE `gallery_id` = `'.
-                    DB::getTablePrefix().
-                    "galleries`.`id`) AS 'files_count'")
-                )
+                'status',
+                DB::raw('COUNT('.DB::getTablePrefix().'files.id) as files_count')
+            )
+            ->leftJoin('files', function($join)
+            {
+                $join->on('gallery_id', '=', 'galleries.id');
+            })
+            ->groupBy('galleries.id')
             ->order();
 
         // Get
