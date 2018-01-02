@@ -20,7 +20,7 @@ class CacheDecorator extends CacheAbstractDecorator implements GalleryInterface
      */
     public function allRaw()
     {
-        $cacheKey = md5(config('app.locale').'allRaw');
+        $cacheKey = md5($this->cachePrefix().'allRaw');
 
         if ($this->cache->has($cacheKey)) {
             return $this->cache->get($cacheKey);
